@@ -44,10 +44,10 @@ public class MainFrame extends JFrame {
 	ButtonGroup tmp_group, menu_group;
 	File file;
 	
-	String header[] = {"Á¾·ù", "Ç°¸ñ", "°¡°Ý"};
+	String header[] = {"Menu", "í’ˆëª©", "Price"};
 	String contents[][] = {};
 	
-	String[] label_list = {"ÁÖ¹® »çÇ×", "ÃÑ¾×"};
+	String[] label_list = {"Order", "Total"};
 	String[] menu_name = {"Latte", "Milk", "Mocha", "ice cream", "tea"};
 	String[] names = {"Hot", "Ice"};
 	int[] price_list = {3000,2000,3500,4000,1500};
@@ -93,15 +93,15 @@ public class MainFrame extends JFrame {
 		btnpanel = new JPanel();
 		btnpanel.setLayout(new GridLayout(0,3,10,0));
 		
-		btn_order = new JButton("ÁÖ¹®");
+		btn_order = new JButton("Order");
 		btn_order.addActionListener(new ActionHandler1());
 		btnpanel.add(btn_order);
 		
-		btn_cancel = new JButton("Ãë¼Ò");
+		btn_cancel = new JButton("Cancel");
 		btn_cancel.addActionListener(new ActionHandler1());
 		btnpanel.add(btn_cancel);
 		
-		btn_quit = new JButton("Á¾·á");
+		btn_quit = new JButton("Exit");
 		btn_quit.addActionListener(new ActionHandler1());
 		btnpanel.add(btn_quit);
 		
@@ -146,7 +146,7 @@ public class MainFrame extends JFrame {
 		File file = new File("data/myorderlist");
 		try {
 			FileWriter fw = new FileWriter(file,true);
-			fw.write("ÃÑ" + model.getRowCount()+"°¡Áö ¸Þ´º"+ "\n");//Line change
+			fw.write("Total" + model.getRowCount()+"menus"+ "\n");//Line change
 			for (int i = 0; i<model.getRowCount();i++) {
 				for(int j = 0; j<model.getColumnCount();j++) {
 					fw.write((String)model.getValueAt(i,j) + " ");
@@ -155,11 +155,11 @@ public class MainFrame extends JFrame {
 			}
 			fw.write("\n\n");
 			fw.flush();
-			JOptionPane.showMessageDialog(null, "ÁÖ¹® ¼º°ø.");
+			JOptionPane.showMessageDialog(null, "Order Success.");
 			
 			this.setVisible(false);
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "ÁÖ¹® ½ÇÆÐ.");
+			JOptionPane.showMessageDialog(null, "Order Fail.");
 			e.printStackTrace();
 			
 		}
@@ -179,14 +179,14 @@ public class MainFrame extends JFrame {
 			// TODO Auto-generated method stub
 			String sign1 = e.getActionCommand();
 			
-			if(sign1.equals("ÁÖ¹®")) {
+			if(sign1.equals("Order")) {
 				order();
 			}
 			
-			else if (sign1.equals("Ãë¼Ò")) {
+			else if (sign1.equals("Cancel")) {
 				cancel();
 			}
-			else if (sign1.equals("Á¾·á")) {
+			else if (sign1.equals("Exit")) {
 				System.exit(0);
 			}
 			
@@ -194,7 +194,7 @@ public class MainFrame extends JFrame {
 	}
 	// TODO ice hot medium
 	// TODO button size down
-	// TODO Ãë¼Ò error fix
+	// TODO ì·¨ì†Œ error fix
 	// TODO hot button Default value
 
 	public class ActionHandler2 implements ActionListener{
