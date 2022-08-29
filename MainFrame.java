@@ -114,7 +114,7 @@ public class MainFrame extends JFrame {
 		Optionpanel.setPreferredSize(new Dimension(120,100));
 		Optionpanel.setLayout(new GridLayout(2,0));
 		
-		tmp_Radio = new JRadioButton[2];
+		tmp_Radio = new JRadioButton[3];
 		tmp_group = new ButtonGroup();
 		for(int i = 0; i<tmp_Radio.length; i++) {
 			tmp_Radio[i] = new JRadioButton(names[i]);
