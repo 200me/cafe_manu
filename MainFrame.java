@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
 	ButtonGroup tmp_group, menu_group;
 	File file;
 	
-	String header[] = {"Menu", "품목", "Price"};
+	String header[] = {"Menu", "Category", "Price"};
 	String contents[][] = {};
 	
 	String[] label_list = {"Order", "Total"};
@@ -86,12 +86,12 @@ public class MainFrame extends JFrame {
 		
 		this.model = new DefaultTableModel(contents, header);
 		this.T_tmp = new JTable(this.model);
-		T_tmp.setPreferredSize(new Dimension(200,200));
+		T_tmp.setPreferredSize(new Dimension(200,100));
 		Orderpanel.add(T_tmp.getTableHeader());
 		Orderpanel.add(Box.createVerticalStrut(8));
 		
 		btnpanel = new JPanel();
-		btnpanel.setLayout(new GridLayout(0,3,10,0));
+		btnpanel.setLayout(new GridLayout(0,1,5,0));
 		
 		btn_order = new JButton("Order");
 		btn_order.addActionListener(new ActionHandler1());
@@ -108,7 +108,7 @@ public class MainFrame extends JFrame {
 		Orderpanel.add(btnpanel);
 		
 		Menupanel = new JPanel();
-		Menupanel.setLayout(new GridLayout(0,2,8,8));
+		Menupanel.setLayout(new GridLayout(0,1,5,5));
 		
 		Optionpanel = new JPanel();
 		Optionpanel.setPreferredSize(new Dimension(120,100));
@@ -243,6 +243,9 @@ public class MainFrame extends JFrame {
 				tmp = new String("Hot");
 			}
 			else if (tmp_Radio[1].isSelected()) {
+				tmp = new String("Medium");
+			}
+			else if (tmp_Radio[2].isSelected()) {
 				tmp = new String("Ice");
 			   }
 			}
