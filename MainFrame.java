@@ -192,10 +192,7 @@ public class MainFrame extends JFrame {
 			
 		}
 	}
-	// TODO ice hot medium
-	// TODO button size down
-	// TODO 취소 error fix
-	// TODO hot button Default value
+
 
 	public class ActionHandler2 implements ActionListener{
 
