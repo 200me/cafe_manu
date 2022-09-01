@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
 	
 	String[] label_list = {"Order", "Total"};
 	String[] menu_name = {"Latte", "Milk", "Mocha", "ice cream", "tea"};
-	String[] names = {"Hot", "Ice"};
+	String[] names = {"Hot", "Ice", Medium};
 	int[] price_list = {3000,2000,3500,4000,1500};
 	
 	
@@ -108,6 +108,7 @@ public class MainFrame extends JFrame {
 		Orderpanel.add(btnpanel);
 		
 		Menupanel = new JPanel();
+		//size set
 		Menupanel.setLayout(new GridLayout(0,1,5,5));
 		
 		Optionpanel = new JPanel();
