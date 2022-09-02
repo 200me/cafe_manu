@@ -167,9 +167,10 @@ public class MainFrame extends JFrame {
 		
 	}
 	
-	public void cancel() {
-		this.model.removeRow(this.T_tmp.getSelectedRow());
-		realsum = realsum - price;
+	public void reset() {
+		// this.model = new DefaultTableModel();
+		this.model.setRowCount(0);
+		realsum = 0;
 		l_realsum.setText(Integer.toString(realsum));
 	}
 	
