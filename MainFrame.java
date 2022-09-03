@@ -48,9 +48,10 @@ public class MainFrame extends JFrame {
 	
 	String[] label_list = {"Order", "Total"};
 	String[] menu_name = {"Latte", "Milk", "Mocha", "ice cream", "tea"};
-	String[] names = {"Hot", "Ice", "Medium"};
+	String[] names = {"Hot", "Medium", "Ice"};
 	int[] price_list = {3000,2000,3500,4000,1500};
 	
+	JRadioButton Midium = new JRadioButton("Ice");
 	
 	public MainFrame() {
 		this.setSize(600,400);
@@ -122,6 +123,8 @@ public class MainFrame extends JFrame {
 			tmp_Radio[i].addItemListener(new ItemHandler());
 			Optionpanel.add(tmp_Radio[i]);
 		}
+		tmp_Radio[2].setSelected(true);
+		tmp = "Ice";
 		
 		Menupanel.add(Optionpanel);
 		
@@ -146,7 +149,7 @@ public class MainFrame extends JFrame {
 		File file = new File("data/myorderlist");
 		try {
 			FileWriter fw = new FileWriter(file,true);
-			fw.write("Total" + model.getRowCount()+"menus"+ "\n");//Line change
+			fw.write("Total " + model.getRowCount()+"menus"+ "\n");//Line change
 			for (int i = 0; i<model.getRowCount();i++) {
 				for(int j = 0; j<model.getColumnCount();j++) {
 					fw.write((String)model.getValueAt(i,j) + " ");
@@ -184,8 +187,8 @@ public class MainFrame extends JFrame {
 				order();
 			}
 			
-			else if (sign1.equals("Cancel")) {
-				cancel();
+			else if (sign1.equals("Reset")) {
+				reset();
 			}
 			else if (sign1.equals("Exit")) {
 				System.exit(0);
@@ -238,13 +241,13 @@ public class MainFrame extends JFrame {
 				return;
 			}
 			if(tmp_Radio[0].isSelected()) {
-				tmp = new String("Hot");
+				tmp = "Hot";
 			}
 			else if (tmp_Radio[1].isSelected()) {
-				tmp = new String("Medium");
+				tmp = "Medium";
 			}
 			else if (tmp_Radio[2].isSelected()) {
-				tmp = new String("Ice");
+				tmp = "Ice";
 			   }
 			}
 		}
