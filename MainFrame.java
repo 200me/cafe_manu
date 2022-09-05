@@ -117,6 +117,7 @@ public class MainFrame extends JFrame {
 		
 		tmp_Radio = new JRadioButton[3];
 		tmp_group = new ButtonGroup();
+		
 		for(int i = 0; i<tmp_Radio.length; i++) {
 			tmp_Radio[i] = new JRadioButton(names[i]);
 			tmp_group.add(tmp_Radio[i]);
