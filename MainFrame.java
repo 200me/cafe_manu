@@ -51,7 +51,7 @@ public class MainFrame extends JFrame {
 	String[] names = {"Hot", "Medium", "Ice"};
 	int[] price_list = {3000,2000,3500,4000,1500};
 	
-	JRadioButton Midium = new JRadioButton("Ice");
+	JRadioButton Medium = new JRadioButton("Ice");
 	
 	public MainFrame() {
 		this.setSize(600,400);
